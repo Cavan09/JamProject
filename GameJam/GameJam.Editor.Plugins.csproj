@@ -136,6 +136,10 @@
       <Project>{85B3E4EF-E456-476D-AA76-27B4931F72CC}</Project>
       <Name>GameJam.Plugins</Name>
     </ProjectReference>
+    <ProjectReference Include="GameJam.csproj">
+      <Project>{4B918598-3D78-06A9-514E-E8460B121790}</Project>
+      <Name>GameJam</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Standard Assets\Editor\CrossPlatformInput\CrossPlatformInputInitialize.cs" />

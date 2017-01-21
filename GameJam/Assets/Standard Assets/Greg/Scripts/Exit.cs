@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Exit : MonoBehaviour
 {
-
     public GameObject m_Destination;
 
 	// Use this for initialization

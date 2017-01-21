@@ -90,8 +90,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Teleport.cs" />
-    <Compile Include="Assets\Test.cs" />
+    <Compile Include="Assets\Scripts\RaiseWaterLevel.cs" />
+    <Compile Include="Assets\Scripts\WaterDetector.cs" />
+    <Compile Include="Assets\Scripts\WaterManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Standard Assets\Cameras\CameraGuidelines.txt" />

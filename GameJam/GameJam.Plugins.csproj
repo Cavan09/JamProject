@@ -164,6 +164,10 @@
     <Compile Include="Assets\Standard Assets\Environment\Water\Water\Scripts\Water.cs" />
     <Compile Include="Assets\Standard Assets\Environment\Water\Water\Scripts\WaterBase.cs" />
     <Compile Include="Assets\Standard Assets\Environment\Water\Water\Scripts\WaterTile.cs" />
+    <Compile Include="Assets\Standard Assets\Greg\Scripts\Exit.cs" />
+    <Compile Include="Assets\Standard Assets\Greg\Scripts\Floor.cs" />
+    <Compile Include="Assets\Standard Assets\Greg\Scripts\Player.cs" />
+    <Compile Include="Assets\Standard Assets\Greg\Scripts\Tower.cs" />
     <Compile Include="Assets\Standard Assets\ParticleSystems\Scripts\AfterburnerPhysicsForce.cs" />
     <Compile Include="Assets\Standard Assets\ParticleSystems\Scripts\ExplosionFireAndDebris.cs" />
     <Compile Include="Assets\Standard Assets\ParticleSystems\Scripts\ExplosionPhysicsForce.cs" />
