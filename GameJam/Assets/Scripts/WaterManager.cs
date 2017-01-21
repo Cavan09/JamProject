@@ -14,6 +14,11 @@ public class WaterManager : MonoBehaviour
     public Material mat;
     public GameObject waterMesh;
 
+    public float waterWidth = 20;
+    public float waterStartPosition = 0;
+    public float waterTopPosition = 0;
+    public float waterBottomPosition = -10;
+
     float baseHeight;
     float leftPosition;
     float waterBase;
@@ -29,14 +34,15 @@ public class WaterManager : MonoBehaviour
     GameObject[] colliders;
 
 	// Use this for initialization
-	void Start () {
-        SpawnWater(0,30,-7,-15);
+	void Start ()
+    {
+        SpawnWater(waterStartPosition, waterWidth, waterTopPosition + transform.position.y, waterBottomPosition);
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		
-	}
+	void Update ()
+    {
+    }
 
     public void SpawnWater(float left, float width, float top, float bottom)
     {
@@ -66,7 +72,7 @@ public class WaterManager : MonoBehaviour
 
         for(int i = 0; i < nodecount; i++)
         {
-            yPositions[i] = top;
+            yPositions[i] = baseHeight;
             xPositions[i] = leftPosition + width * i / edgecount;
             accelerations[i] = 0;
             velocities[i] = 0;
@@ -102,7 +108,7 @@ public class WaterManager : MonoBehaviour
             colliders[i].name = "Trigger";
             colliders[i].AddComponent<BoxCollider2D>();
             colliders[i].transform.parent = transform;
-            colliders[i].transform.position = new Vector3(leftPosition + width * (i + 0.5f) / edgecount, top - 0.5f, 0);
+            colliders[i].transform.position = new Vector3(leftPosition + width * (i + 0.5f) / edgecount, baseHeight - 0.5f, 0);
             colliders[i].transform.localScale = new Vector3(width / edgecount, 1, 1);
             colliders[i].GetComponent<BoxCollider2D>().isTrigger = true;
             colliders[i].AddComponent<WaterDetector>();
@@ -133,7 +139,7 @@ public class WaterManager : MonoBehaviour
             accelerations[i] = -force;
             yPositions[i] += velocities[i];
             velocities[i] += accelerations[i];
-            Body.SetPosition(i, new Vector3(xPositions[i], yPositions[i], z));
+            Body.SetPosition(i, new Vector3(xPositions[i], yPositions[i] + transform.position.y, z));
         }
 
         float[] leftDeltas = new float[xPositions.Length];
@@ -169,6 +175,7 @@ public class WaterManager : MonoBehaviour
         }
 
         UpdateMeshes();
+        RandomWaterNoise();
     }
 
     public void Splash(float xpos, float velocity)
@@ -192,6 +199,14 @@ public class WaterManager : MonoBehaviour
             //Destroy(splish, lifetime + 0.3f);
 
         }
+    }
+
+    public void RandomWaterNoise()
+    {
+        int pos = Mathf.RoundToInt(Random.Range(0, xPositions.Length - 1));
+        float velocity = Random.Range(0, 0.1f);
+        Debug.Log(pos);
+        Splash(pos, velocity);
     }
 
     //private void OnTriggerEnter(Collider2D hit)

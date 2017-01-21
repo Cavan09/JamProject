@@ -1,4 +1,4 @@
 sceneSetups:
-- path: D:/Documents/TestUnity/unity-2d-water-effect-master/assets/scene.unity
+- path: Assets/GameScenes/GameScene.unity
   isLoaded: 1
   isActive: 1
