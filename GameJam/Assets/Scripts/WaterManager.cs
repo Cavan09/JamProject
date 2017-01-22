@@ -205,7 +205,6 @@ public class WaterManager : MonoBehaviour
     {
         int pos = Mathf.RoundToInt(Random.Range(0, xPositions.Length - 1));
         float velocity = Random.Range(0, 0.1f);
-        Debug.Log(pos);
         Splash(pos, velocity);
     }
 
