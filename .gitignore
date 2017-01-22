@@ -46,10 +46,8 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-GameJam/Library/metadata
 GameJam/Temp/
 GameJam/Library/ShaderCache/
-*.meta
 GameJam/.vs/
 *.suo
 *.suo
